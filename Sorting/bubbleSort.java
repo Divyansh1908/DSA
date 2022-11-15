@@ -2,12 +2,10 @@
 public class bubbleSort {
     public static void sorts(int nums[])
     {
-        int turns = 0;
-
         for(int i=0; i< nums.length-1; i++)
         {
             int swaps = 0; // Edge Case -  To check if the array is already sorted or no -- Optimised code now has a TC of O(N)
-            for(int j=0; j< nums.length-1-turns; j++)
+            for(int j=0; j< nums.length-1-i; j++)
             {
                 if(nums[j]>nums[j+1])
                 {
@@ -32,6 +30,6 @@ public class bubbleSort {
     public static void main(String[] args) {
         int nums[] = {5,4,1,3,2};
         int nums1[] = {1,2,3,4,5};
-        sorts(nums1);
+        sorts(nums);
     }
 }
