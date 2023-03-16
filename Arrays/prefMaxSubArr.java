@@ -17,6 +17,7 @@ public class prefMaxSubArr {
             for(int j=i; j<pref.length; j++)
             {
                 int end = j; //Initialising end of the subarray
+                //If Start = 0 then start-1 will be negative and give error therefore just put end
                 if(start == 0) //For 0th element - All sums are equal to the end sum stored in each index of the Prefix array - because it was made that way.
                 {
                     sum = pref[end];
