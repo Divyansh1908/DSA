@@ -2,9 +2,9 @@
 public class selectionSort {
     public static void sorting(int nums[])
     {
-        for(int i=0; i<nums.length-1; i++) // Outer loop running from 0 -> n-2
+        for(int i=0; i<nums.length-1; i++) // Outer loop running from 0 -> n-2 // coz end tak aate aate last elem max hoga so no need to compare that
         {
-            int min = i; // Initialising min to the current index
+            int min = i; //Initialising min to the current index
             for(int j=i+1; j< nums.length; j++) //Check for minimum element in unsorted array
             {
                 if(nums[min]>nums[j])

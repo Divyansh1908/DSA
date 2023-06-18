@@ -19,7 +19,7 @@ public class countingSort {
         int j=0; // Will be used to count position in the resultant array
         for(int i=0; i<count.length; i++)
         {
-            while(count[i]>0) // At each element run until count > 1
+            while(count[i]>0) //jabtak count of a number is above 0
             {
                 nums[j] = i; 
                 j++;
