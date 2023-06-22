@@ -53,7 +53,7 @@ public class usingTwoQueuePop {
                                     //otherwise add it to the q1 queue.
                 {
                     top = q2.remove();
-                    if(q2.isEmpty())
+                    if(q2.isEmpty()) //this will prevent last element from getting in
                     {
                         break;
                     }

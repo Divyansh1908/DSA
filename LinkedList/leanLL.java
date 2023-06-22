@@ -89,12 +89,12 @@ public class leanLL {
             //step 1 reach the index before the one you want to add
             Node temp = head;
             int i = 0;
-            while(i<index-1)
+            while(i<index-1) //at index-2 it will actually be at index-1 due to temp.next getting executed afterwards
             {
                 temp = temp.next;
                 i++;
             }
-           
+            // By this time temp is at second last.
             
             //Step3 - point new node to the index of temp.next
             newNode.next = temp.next;
