@@ -48,7 +48,7 @@ public class implementationArr {
             }
             //decrement rear
             rear--;
-            return front;
+            return front; //coz front wala element gayab hogaya naa
         }
 
         //peek - O(1)
