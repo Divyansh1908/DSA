@@ -1,5 +1,7 @@
 package BinaryTrees;
 
+import Stacks.reverseAStack;
+
 public class heightofTree {
         public static class Node{
         int data;
@@ -43,6 +45,47 @@ public class heightofTree {
         int righS = sum(root.right);
         return (leftS + righS)+root.data;
     }
+    public static int maxDiam(Node root)
+    {
+        if(root == null)
+        {
+            return 0;
+        }
+        int leftDiam = maxDiam(root.left);
+        int leftHeight = height(root.left);
+        int rightDiam = maxDiam(root.right);
+        int righHeight = height(root.right);
+
+        int selfDiam = leftHeight+righHeight+1;
+
+        return Math.max(leftDiam, Math.max(rightDiam, selfDiam));
+    }
+
+    public static class Info{
+        int daim;
+        int ht;
+
+        public Info(int daim, int ht)
+        {
+            this.daim = daim;
+            this.ht = ht;
+        }
+    }
+    public static Info diamter(Node root)
+    {
+        if(root == null)
+        {
+            return new Info(0, 0);
+        }
+        Info left = diamter(root.left);
+        Info right = diamter(root.right);
+
+        int maxDi = Math.max(left.daim, Math.max(right.daim, left.ht+right.ht+1));
+        int maxH = Math.max(left.ht, right.ht)+1;
+
+        return new Info(maxDi, maxH);
+
+    }
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node (2) ;
@@ -57,5 +100,11 @@ public class heightofTree {
         System.out.println(c);
         int s = sum(root);
         System.out.println(s);
+        int d = maxDiam(root);
+        System.out.println(d);
+        int di = diamter(root).daim;
+        System.out.println(di);
+        int hi = diamter(root).ht;
+        System.out.println(hi);
     }
 }
